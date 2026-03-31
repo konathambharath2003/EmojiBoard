@@ -1,115 +1,116 @@
-<img align="left" width="80" height="80"
-src="fastlane/metadata/android/en-US/images/icon.png" alt="App icon">
+# ⌨️ EmojiBoard
 
-# FlorisBoard [![Crowdin](https://badges.crowdin.net/florisboard/localized.svg)](https://crowdin.florisboard.patrickgold.dev) [![Matrix badge](https://img.shields.io/badge/chat-%23florisboard%3amatrix.org-blue)](https://matrix.to/#/#florisboard:matrix.org) ![FlorisBoard CI](https://github.com/florisboard/florisboard/workflows/FlorisBoard%20CI/badge.svg?event=push)
+![Kotlin](https://img.shields.io/badge/Kotlin-B125EA?style=for-the-badge&logo=kotlin&logoColor=white)
+![Android Studio](https://img.shields.io/badge/Android_Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![TensorFlow Lite](https://img.shields.io/badge/TensorFlow_Lite-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
 
-**FlorisBoard** is a free and open-source keyboard for Android 6.0+
-devices. It aims at being modern, user-friendly and customizable while
-fully respecting your privacy. Currently in early-beta state.
+A custom Android keyboard that reads the emotional context of what you're typing and suggests relevant emojis — entirely on your device, no internet required.
 
-<table>
-<tr>
-<th align="center" width="50%">
-<h3>Stable <a href="https://github.com/florisboard/florisboard/releases/latest"><img alt="Latest stable release" src="https://img.shields.io/github/v/release/florisboard/florisboard"></a></h3>
-</th>
-<th align="center" width="50%">
-<h3>Beta <a href="https://github.com/florisboard/florisboard/releases"><img alt="Latest beta release" src="https://img.shields.io/github/v/release/florisboard/florisboard?include_prereleases"></a></h3>
-</th>
-</tr>
-<tr>
-<td valign="top">
-<p><i>Major versions only, 1 release per 1-5 months</i><br><br>Updates are more polished, new features are matured and tested through to ensure a stable experience.</p>
-</td>
-<td valign="top">
-<p><i>Beta versions, up to 1-2 releases per week</i><br><br>Updates contain new features that may not be fully matured yet and bugs are more likely to occur. Allows you to give early feedback.</p>
-</td>
-</tr>
-<tr>
-<td valign="top">
-<p><a href="https://f-droid.org/packages/dev.patrickgold.florisboard"><img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png" height="64" alt="F-Droid badge"></a></p>
-<p>
+Built on top of the excellent open-source [FlorisBoard](https://github.com/florisboard/florisboard) keyboard by Patrick Goldinger, with a deep learning layer added on top.
 
-**Google Play**: Join the [FlorisBoard Test Group](https://groups.google.com/g/florisboard-public-alpha-test), then visit the [testing page](https://play.google.com/apps/testing/dev.patrickgold.florisboard). Once joined and installed, updates will be delivered like for any other app. ([Store entry](https://play.google.com/store/apps/details?id=dev.patrickgold.florisboard))
+---
 
-</p>
-<p>
+## What it does
 
-**Manual**: Download and install the APK from the release page.
+Most emoji suggestions on keyboards are keyword-based — they show 🔥 when you type "fire". This is different. EmojiBoard uses a fine-tuned **Twitter-RoBERTa-base** Transformer model to understand the *sentiment and emotion* behind your sentence as a whole, not just individual keywords.
 
-</p>
-</td>
-<td valign="top">
-<p><a href="https://apt.izzysoft.de/fdroid/index/apk/dev.patrickgold.florisboard.beta"><img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" height="64" alt="IzzySoft repo badge"></a></p>
-<p>
+Type something sarcastic, romantic, frustrated, or excited — and the keyboard picks up on it.
 
-**Google Play**: Join the [FlorisBoard Test Group](https://groups.google.com/g/florisboard-public-alpha-test), then visit the [beta testing page](https://play.google.com/apps/testing/dev.patrickgold.florisboard.beta). Once joined and installed, updates will be delivered like for any other app. ([Store entry](https://play.google.com/store/apps/details?id=dev.patrickgold.florisboard.beta))
+The top 3 emoji suggestions appear live above the keyboard as you type, updating with every word.
 
-</p>
-<p>
+---
 
-**Manual**: Download and install the APK from the release page.
+## Features
 
-</p>
-</td>
-</tr>
-</table>
+- **Emotion-aware suggestions** — understands joy, sadness, anger, love, fear, surprise, sarcasm, and more
+- **Two-model pipeline** — one model handles emoji prediction, another handles sentiment classification, both running in parallel
+- **Completely offline** — your keystrokes never leave your phone
+- **Handles similar emojis correctly** — differentiates between 😂 and 🤣, ❤️ and 🥰, using Label Smoothing and Hard Example Mining during training
+- **Sub-200ms inference** — both models are quantized TFLite graphs, fast enough to run in real-time on mobile CPUs
 
-Beginning with v0.4.0 FlorisBoard will follow [SemVer](https://semver.org/#summary) versioning scheme and enter the public beta on Google Play.
+---
 
-## Highlighted features
-- Integrated clipboard manager / history
-- Advanced theming support and customization
-- Integrated extension support (still evolving)
-- Emoji keyboard
-- Spell checking service
-- Glide typing (currently English only)
+## Screenshots
 
-Word suggestions are not included in the current releases and are a major goal for the v0.4.0 milestone.
+| Standard Typing | Sarcasm Detection | Emotional Support |
+| :---: | :---: | :---: |
+| <img src="images/screenshot1.png" width="250"/> | <img src="images/screenshot2.png" width="250"/> | <img src="images/screenshot3.png" width="250"/> |
 
-Feature roadmap: See [ROADMAP.md](ROADMAP.md)
+> Upload your screenshots to an `images/` folder in the repo and update the paths above.
 
-## Contributing
-Wanna contribute to FlorisBoard? That's great to hear! There are lots of
-different ways to help out. Bug reporting, making pull requests,
-translating FlorisBoard to make it more accessible, etc. For more
-information see the [contributing guidelines](CONTRIBUTING.md). Thank
-you for your help!
+---
 
-## List of permissions FlorisBoard requests
-Please refer to this [page](https://github.com/florisboard/florisboard/wiki/List-of-permissions-FlorisBoard-requests)
-to get more information on this topic.
+## How the AI works
 
-## Used libraries, components and icons
-* [AndroidX libraries](https://github.com/androidx/androidx) by
-  [Android Jetpack](https://github.com/androidx)
-* [Accompanist Compose UI libraries](https://github.com/google/accompanist/) by
-  [Google](https://github.com/google)
-* [Google Material icons](https://github.com/google/material-design-icons) by
-  [Google](https://github.com/google)
-* [JetPref preference library](https://github.com/patrickgold/jetpref) by
-  [patrickgold](https://github.com/patrickgold)
-* [KotlinX coroutines library](https://github.com/Kotlin/kotlinx.coroutines) by
-  [Kotlin](https://github.com/Kotlin)
-* [KotlinX serialization library](https://github.com/Kotlin/kotlinx.serialization) by
-  [Kotlin](https://github.com/Kotlin)
-* [ICU4C](https://github.com/unicode-org/icu) by
-  [The Unicode Consortium](https://github.com/unicode-org)
-* [Nuspell](https://github.com/nuspell/nuspell) by
-  [Nuspell](https://github.com/nuspell)
+The model was trained on a 100k+ real-world messaging dataset sourced from Twitter. Here's the training pipeline:
+
+1. **Base model:** Started with `cardiffnlp/twitter-roberta-base` — a RoBERTa model already pre-trained on 58M tweets, which gives it a strong grasp of how people actually text
+2. **Layer freezing:** Bottom 8 encoder layers were frozen to preserve general English understanding and prevent catastrophic forgetting
+3. **Class imbalance fix:** Clipped Class Weights were applied — some emojis appear way more than others in real data, so without this the model just predicts 😂 for everything
+4. **Hard example mining (OHEM):** Focused training on the samples the model was most confused about, especially semantically similar emojis
+5. **Export pipeline:** PyTorch → TensorFlow → TFLite (quantized INT8), which reduced model size significantly and made on-device inference practical
+
+The sentiment model runs alongside the emoji model to provide a second opinion on emotional tone, especially useful for ambiguous sentences.
+
+---
+
+## Installation
+
+### Prerequisites
+- Android Studio Giraffe or newer
+- Minimum SDK: API 26 (Android 8.0)
+- Target SDK: API 34 (Android 14)
+
+### Build from source
+
+```bash
+git clone https://github.com/konathambharath2003/EmojiBoard.git
+```
+
+1. Open the project in Android Studio
+2. Let Gradle sync and download dependencies
+3. Make sure `emoji_model.tflite` and `sentiment/sentiment_model.tflite` are present in `app/src/main/assets/`
+4. Hit **Run** to build and install on your device or emulator
+
+### Enable the keyboard on your phone
+
+1. Go to **Settings → System → Languages & input**
+2. Tap **On-screen keyboard → Manage on-screen keyboards**
+3. Toggle **EmojiBoard** on
+4. Open any app, tap the keyboard switcher icon, and select EmojiBoard
+5. Start typing — emoji suggestions will appear above the keys
+
+---
+
+## Project structure
+
+The three core files added on top of FlorisBoard are:
+
+- `EmojiPredictor.kt` — loads the emoji TFLite model, runs tokenization, returns top-3 predictions
+- `SentimentPredictor.kt` — loads the sentiment TFLite model, maps output to emotion categories and emoji groups
+- `Emojifier.kt` — bridges both models with the keyboard UI, updates suggestions in real-time as the user types
+
+Everything else is standard FlorisBoard — theming, settings, glide typing, clipboard manager, etc. all work as usual.
+
+---
+
+## Based on FlorisBoard
+
+This project would not exist without [FlorisBoard](https://github.com/florisboard/florisboard), a beautifully built open-source keyboard by [Patrick Goldinger](https://github.com/patrickgold). EmojiBoard adds an AI layer on top of it but inherits all of FlorisBoard's core keyboard functionality.
+
+FlorisBoard is licensed under the Apache License 2.0. All original copyright belongs to Patrick Goldinger.
+
+---
 
 ## License
+
 ```
-Copyright 2020-2022 Patrick Goldinger
+Copyright 2024 Konatham Bharath
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+    http://www.apache.org/licenses/LICENSE-2.0
 ```
