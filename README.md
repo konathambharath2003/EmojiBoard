@@ -51,7 +51,7 @@ The model was trained on a 100k+ real-world messaging dataset sourced from Twitt
 4. **Hard example mining (OHEM):** Focused training on the samples the model was most confused about, especially semantically similar emojis
 5. **Export pipeline:** PyTorch → TensorFlow → TFLite (quantized INT8), which reduced model size significantly and made on-device inference practical
 
-The sentiment model runs alongside the emoji model to provide a second opinion on emotional tone, especially useful for ambiguous sentences. It classifies text into 11 emotions :- joy, love, anger, sadness, fear, surprise, disgust, optimism, pessimism, anticipation, and trust — and maps each to a curated set of 3 emojis, so even when the main model is uncertain, the suggestions still feel emotionally right.
+The sentiment model runs alongside the emoji model to provide a second opinion on emotional tone, especially useful for ambiguous sentences. It classifies text into 11 emotions :- joy, love, anger, sadness, fear, surprise, disgust, optimism, pessimism, anticipation, and trust maps each to a curated set of 3 emojis, so even when the main model is uncertain, the suggestions still feel emotionally right.
 
 ---
 
