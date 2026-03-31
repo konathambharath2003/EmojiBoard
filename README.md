@@ -31,13 +31,13 @@ The top 3 emoji suggestions appear live above the keyboard as you type, updating
 
 ---
 
-## Screenshots
+## Screenshot
 
-| Standard Typing | Sarcasm Detection | Emotional Support |
-| :---: | :---: | :---: |
-| <img src="images/screenshot1.png" width="250"/> | <img src="images/screenshot2.png" width="250"/> | <img src="images/screenshot3.png" width="250"/> |
+| Typing | 
+| :---: | 
+| <img src="images/Output1.png" width="250"/> | 
 
-> Upload your screenshots to an `images/` folder in the repo and update the paths above.
+
 
 ---
 
