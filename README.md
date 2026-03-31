@@ -85,11 +85,10 @@ git clone https://github.com/konathambharath2003/EmojiBoard.git
 
 ## Project structure
 
-The three core files added on top of FlorisBoard are:
+The two core files added on top of FlorisBoard are:
 
 - `EmojiPredictor.kt` — loads the emoji TFLite model, runs tokenization, returns top-3 predictions
 - `SentimentPredictor.kt` — loads the sentiment TFLite model, maps output to emotion categories and emoji groups
-- `Emojifier.kt` — bridges both models with the keyboard UI, updates suggestions in real-time as the user types
 
 Everything else is standard FlorisBoard — theming, settings, glide typing, clipboard manager, etc. all work as usual.
 
