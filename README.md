@@ -35,7 +35,7 @@ The top 3 emoji suggestions appear live above the keyboard as you type, updating
 
 | Typing | 
 | :---: | 
-| <img src="images/Output1.png" width="250"/> | 
+| <img src="images/Output_1.png" width="300"/> | 
 
 
 
