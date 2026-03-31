@@ -41,7 +41,7 @@ The top 3 emoji suggestions appear live above the keyboard as you type, updating
 
 ---
 
-## How the AI works
+## How the Model works
 
 The model was trained on a 100k+ real-world messaging dataset sourced from Twitter. Here's the training pipeline:
 
